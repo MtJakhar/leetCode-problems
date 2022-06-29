@@ -9,7 +9,7 @@ const sortedSquares = (nums) => {
   let answer = nums.map((element) => {
     return element ** 2;
   });
-  // create comapare function to order it in non-decreasing, otherwise unicode sort...
+  // create compare function to order it in non-decreasing, otherwise unicode sort...
   return answer.sort((a, b) => a - b);
 };
 
