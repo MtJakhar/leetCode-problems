@@ -24,3 +24,8 @@ const sortArrayByParity = (nums) => {
   }
   return nums;
 };
+
+let object = {
+  "haroon age": 18,
+  "harron height": "6 feet +",
+};
