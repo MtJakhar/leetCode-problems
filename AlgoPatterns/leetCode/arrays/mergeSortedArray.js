@@ -11,16 +11,34 @@ const merge = (nums1, m, nums2, n) => {
     if (nums2[n] > nums1[m]) {
       nums1[pointer] = nums2[n];
       n--;
-    } else if (nums2[n] < nums1[m]) {
+    } else(nums2[n] < nums1[m]) {
       nums1[pointer] = nums1[m];
       m--;
-    } else if (nums2[n] === nums1[m]) {
-      break;
-    } else {
-      console.log(error);
     }
   }
   return nums1;
+};
+
+// second solution
+const merge2 = (nums1, m, nums2, n) => {
+  let i = m + n - 1;
+  let first = m - 1;
+  let second = n - 1;
+
+  while (second >= 0) {
+    let fVal = nums1[first];
+    let sVal = nums2[second];
+
+    if (fVal > sVal) {
+      nums1[i] = fVal;
+      i--;
+      first--;
+    } else {
+      nums1[i] = sVal;
+      i--;
+      second--;
+    }
+  }
 };
 
 console.log(merge(numsOne, mm, numsTwo, nn));
