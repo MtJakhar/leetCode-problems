@@ -16,7 +16,9 @@ for (let i = 0; i < newArray.length; i++) {
 // in the array for inserting a new element.
 newArray[length1] = 10;
 length1++;
+
 console.log(newArray, "insert end/push");
+// [0,1,2,10,0,0]
 
 // B) Insert new element at the beginning of the Array
 
@@ -30,7 +32,9 @@ for (let i = 3; i >= 0; i--) {
 // Now that we have created space for the new element,
 // we can insert it at the beginning.
 newArray[0] = 20;
+
 console.log(newArray, "insert beginning/unshift");
+// [20,0,1,2,10,0]
 
 // C) Insert Anywhere in Array
 
@@ -39,4 +43,6 @@ for (let i = 4; i >= 2; i--) {
 }
 
 newArray[2] = 30;
+
 console.log(newArray, "insert anywhere/splice");
+// [20,0,30,1,2,10]

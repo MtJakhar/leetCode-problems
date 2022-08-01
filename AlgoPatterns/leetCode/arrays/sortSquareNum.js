@@ -1,7 +1,7 @@
 // Given an integer array nums sorted in non-decreasing order, return an array
 // of the squares of each number sorted in non-decreasing order.
 
-// my solution (naive)
+//(naive) solution
 nums = [-4, -1, 0, 3, 10];
 
 const sortedSquares = (nums) => {
@@ -11,6 +11,7 @@ const sortedSquares = (nums) => {
   });
   // create compare function to order it in non-decreasing, otherwise unicode sort...
   return answer.sort((a, b) => a - b);
+  // sort has a time Complexity of O(n log n), which is not ideal
 };
 
 console.log(sortedSquares(nums));
@@ -20,7 +21,7 @@ nums = [-4, -1, 0, 3, 10];
 // better version with O(n) Time C
 const sortedSquares2 = (nums) => {
   // using array constructor rather than [], cause you can fill array with 0s
-  // which can be replaced also unshifting is O(N) which will make this a
+  // which can be replaced, also unshifting is O(N) which will make this a
   // O(N^2), Array constructor with arrayIdx-- is much better
   let newArray = new Array(nums.length).fill(0);
   let left = 0;

@@ -19,3 +19,5 @@ const findMaxConsecutiveOnes = (nums) => {
 };
 
 console.log(findMaxConsecutiveOnes(array));
+
+// timeC = O(n) while spaceC = O(1)
