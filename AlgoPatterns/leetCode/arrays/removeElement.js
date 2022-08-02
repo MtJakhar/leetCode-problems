@@ -32,9 +32,10 @@ const removeElement2 = (nums, val) => {
   for (i = 0; i < nums.length; i++) {
     if (nums[i] === val) {
       nums.splice(i, 1);
+      i--;
     }
   }
-  return nums;
+  return nums.length;
 };
 
 console.log(removeElement2(array, 3));
