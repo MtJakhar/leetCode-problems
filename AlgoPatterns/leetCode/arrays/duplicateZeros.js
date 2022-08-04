@@ -51,6 +51,7 @@ const duplicateZeros2 = (array) => {
 };
 
 // better solution Time Complexity is O(N), Space  is O(1)
+// error in code below not correct
 
 const duplicateZeros3 = (array) => {
   let countZero = 0;
@@ -61,6 +62,7 @@ const duplicateZeros3 = (array) => {
   }
 
   let len = array.length + countZero;
+
   for (let i = array.length - 1, j = len - 1; i < j; i--, j--) {
     if (array[i] !== 0) {
       if (j < array.length) {
