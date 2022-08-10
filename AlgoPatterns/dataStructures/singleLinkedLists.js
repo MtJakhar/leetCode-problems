@@ -26,7 +26,7 @@ class SinglyLinkedList {
     } else {
       // Otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
       this.tail.next = newNode;
-      this.tail - newNode;
+      this.tail = newNode;
     }
     // Increment the length by one
     this.length++;
@@ -81,7 +81,7 @@ class SinglyLinkedList {
     // create a new node using the value passed to the function
     let newNode = new Node(val);
     // if there is no head property on the list, set the head and tail to be the newly created node
-    if (!head) {
+    if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
     } else {
@@ -131,9 +131,21 @@ class SinglyLinkedList {
     // if the index is less than zero or greater than the length , return false
     if (index < 0 || index > this.length) return false;
     // if the index is  the same as the length, psuh a new node to the end of the list
-    if (index === this.length) return this.push(val);
+    if (index === this.length) !!this.push(val);
+
+    // if(index === this.length) {
+    //   this.push(val);
+    //   return true;
+    // }
+
     // if the index is 0, unshift a new node to the start of the list
-    if (index === 0) this.unshift(val);
+    if (index === 0) !!this.unshift(val);
+
+    // if(index === 0) {
+    //   this.unshift(val);
+    //   return true;
+    // }
+
     // Otherwise, using the get method, access the node the index -1
     // set the next property on that node to be the new node
     let newNode = new Node(val);
