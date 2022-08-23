@@ -9,7 +9,7 @@ class MyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length = null;
+    this.length = 0;
   }
   //   [0,1,2,3,4,5]
   get(index) {

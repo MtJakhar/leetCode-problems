@@ -12,9 +12,10 @@ class MyLinkedList {
   constructor() {
     this.head = new Node();
     this.tail = new Node();
+    this.length = 0;
+    // prev and next are null in node class so they are defined below
     this.head.next = this.tail;
     this.tail.prev = this.head;
-    this.length = 0;
   }
 
   get(index) {
@@ -22,7 +23,7 @@ class MyLinkedList {
       return -1;
     }
 
-    let current = this.head;
+    let current = this.head.next;
 
     while (index--) {
       current = current.next;
@@ -65,6 +66,7 @@ class MyLinkedList {
       prev = prev.next;
     }
     let next = prev.next;
+
     let newNode = new Node(val, prev, next);
 
     prev.next = newNode;
