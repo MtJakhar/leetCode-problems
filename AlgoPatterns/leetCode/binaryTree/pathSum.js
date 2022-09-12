@@ -32,12 +32,12 @@ const hasPathSum2 = (root) => {
     return false;
   }
 
-  if (sum === root.val && root.left === null && root.right === null) {
+  if (targetSum === root.val && root.left === null && root.right === null) {
     return true;
   }
 
   return (
-    hasPathSum(root.left, sum - root.val) ||
-    hasPathSum(root.right, sum - root.val)
+    hasPathSum(root.left, targetSum - root.val) ||
+    hasPathSum(root.right, targetSum - root.val)
   );
 };
