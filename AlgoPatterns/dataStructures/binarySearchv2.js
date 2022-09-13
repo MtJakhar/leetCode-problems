@@ -22,7 +22,7 @@ class BST {
   insert(value) {
     this.count++;
 
-    let newNode = newNode(value);
+    let newNode = new Node(value);
 
     const searchTree = (node) => {
       // if value < node.value, go left
