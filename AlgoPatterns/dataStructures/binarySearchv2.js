@@ -67,7 +67,7 @@ class BST {
   }
 
   contains(value) {
-    let currentNode = this.node;
+    let currentNode = this.root;
 
     while (currentNode) {
       if (value === currentNode.value) {
