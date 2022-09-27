@@ -1,17 +1,28 @@
+// timeC = o(n), spaceC = o(1)
+
 const dominantIndex = (nums) => {
-  let largestIdx = 0;
-  let largestValue = 0;
+  let largest = 0;
+  let largeIndex = 0;
+
+  // create first for loop which will find largest number
   for (let i = 0; i < nums.length; i++) {
-    if (largestValue < nums[i]) {
-      largestIdx = 1;
-      largestValue = nums[i];
+    if (nums[i] > largest) {
+      largest = nums[i];
+      largeIndex = i;
     }
   }
+
+  // now compare largest with all elements to see if at least twice as big
   for (let i = 0; i < nums.length; i++) {
-    let product = nums[i] * 2;
-    if (largestValue < product) {
+    if (largeIndex === i) {
+      i++;
+    }
+    // return -1 if largest si less than 2 time any other element
+    if (largest < nums[i] * 2) {
       return -1;
     }
   }
-  return largestIdx;
+
+  // return largestIndex if for loops are completed.
+  return largeIndex;
 };
