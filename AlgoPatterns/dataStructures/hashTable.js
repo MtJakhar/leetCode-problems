@@ -2,7 +2,7 @@
 // fast
 // good hash that works on strings
 const hash = (key, arrayLen) => {
-  let totoal = 0;
+  let total = 0;
   for (let char of key) {
     // map "a" to 1, "b" to 2, "c" to 3, etc.
     let value = char.charCodeAt(0) - 96;
