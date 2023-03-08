@@ -1,4 +1,4 @@
-// T(C) = O(N), S(C)=O(N)
+// T(C) = O(N), S(C)=O(1)
 
 var runningSum = function (nums) {
   // create variable which keeps track of running sum
