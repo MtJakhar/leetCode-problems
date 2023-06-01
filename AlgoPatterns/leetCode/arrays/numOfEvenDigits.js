@@ -16,7 +16,7 @@ const findNumbers = (nums) => {
   // make a even number variable
   let evenNums = 0;
   for (i = 0; i < nums.length; i++) {
-    if (digitCounter(nums[i]) % 2 == 0) {
+    if (digitCounter(nums[i]) % 2 === 0) {
       evenNums++;
     }
   }

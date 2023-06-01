@@ -44,3 +44,5 @@ const sortedSquares2 = (nums) => {
 };
 
 console.log(sortedSquares2(nums));
+
+// The time complexity of this solution is O(n), where n is the length of the input array nums. This is because we perform a single pass through the nums array. The space complexity is O(n) as well, since we use an additional array of the same size as nums to store the squared numbers.
