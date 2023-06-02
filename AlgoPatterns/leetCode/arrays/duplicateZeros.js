@@ -31,53 +31,22 @@ let answer2 = [1, 0, 0, 2, 3, 0, 0, 4];
 
 // let arr = [1, 0, 2, 3, 0, 4, 5, 0];
 
-const duplicateZeros2 = (array) => {
-  // loop through array
-  for (i = 0; i <= array.length; i++) {
-    // if zero duplicate it and insert with splice
-    if (array[i] === 0) {
-      // splice written out
-      for (let i = array.length - 1; i >= array[i]; i--) {
-        array[i + 1] = array[i];
+var duplicateZeros2 = function (arr) {
+  const length = arr.length;
+  let i = 0;
+
+  while (i < length) {
+    if (arr[i] === 0) {
+      // Shift all elements to the right by one position
+      for (let j = length - 1; j > i; j--) {
+        arr[j] = arr[j - 1];
       }
-      // array[i] = 0
-
-      i++;
-      //   pop() has been added cause, array must be fixed to original length
-
-      array.pop();
-    }
-  }
-
-  return array;
-};
-
-// better solution Time Complexity is O(N), Space  is O(1)
-// error in code below not correct
-
-const duplicateZeros3 = (array) => {
-  let countZero = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === 0) {
-      countZero++;
-    }
-  }
-
-  let len = array.length + countZero;
-
-  for (let i = array.length - 1, j = len - 1; i < j; i--, j--) {
-    if (array[i] !== 0) {
-      if (j < array.length) {
-        array[j] = array[i];
-      }
+      // Insert the duplicated zero at the current position
+      arr[i + 1] = 0;
+      i += 2; // Increment by 2 since we processed a zero and its duplicate
     } else {
-      if (j < array.length) {
-        array[j] = array[i];
-      }
-      j--;
-      if (j < array.length) {
-        array[j] = array[i];
-      }
+      i++; // Increment by 1 if the current element is not zero
     }
   }
+  arr.length = length;
 };
