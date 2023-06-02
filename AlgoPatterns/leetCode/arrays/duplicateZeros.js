@@ -37,7 +37,7 @@ const duplicateZeros2 = (array) => {
     // if zero duplicate it and insert with splice
     if (array[i] === 0) {
       // splice written out
-      for (let i = array.length; i >= array[i]; i--) {
+      for (let i = array.length - 1; i >= array[i]; i--) {
         array[i + 1] = array[i];
       }
       // array[i] = 0
