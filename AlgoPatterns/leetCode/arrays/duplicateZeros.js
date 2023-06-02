@@ -29,6 +29,8 @@ let answer1 = [1, 0, 0, 2, 3, 0, 0, 4, 5, 0, 0];
 // answer with pop
 let answer2 = [1, 0, 0, 2, 3, 0, 0, 4];
 
+// let arr = [1, 0, 2, 3, 0, 4, 5, 0];
+
 const duplicateZeros2 = (array) => {
   // loop through array
   for (i = 0; i <= array.length; i++) {
