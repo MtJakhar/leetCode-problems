@@ -6,7 +6,7 @@
 // Input: nums = [3,2,2,3], val = 3
 // Output: 2, nums = [2,2,_,_]
 
-// my first version, creating my own splice method timeC => O(N^2)
+// my first version, creating my own splice method timeC => O(N^2) doesn't work cause leetcode is retarded and is asking for the answer in the dumbest way possible.
 let array = [3, 2, 2, 3];
 
 console.log(array);
@@ -51,4 +51,18 @@ const removeElement3 = (nums, val) => {
     }
   }
   return index;
+};
+
+const removeElement4 = (nums, val) => {
+  let k = 0; // Represents the number of elements not equal to val
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      // If the element is not equal to val, move it to the front of the array
+      nums[k] = nums[i];
+      k++;
+    }
+  }
+
+  return k; // Return the number of elements not equal to val
 };
