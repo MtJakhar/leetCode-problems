@@ -22,16 +22,21 @@ const checkIfExist = (arr) => {
 
 // set
 
-var checkIfExist2 = function (arr) {
-  const set = new Set();
+const checkIfExist2 = (arr) => {
+  const seen = new Set(); // Create a Set to store seen elements
 
-  for (const num of arr) {
-    if (set.has(num * 2) || set.has(num / 2)) {
-      return true;
+  for (let i = 0; i < arr.length; i++) {
+    const current = arr[i];
+
+    if (seen.has(current * 2) || seen.has(current / 2)) {
+      // Check if the double or half of the current element is already seen
+      return true; // If found, return true
     }
 
-    set.add(num);
+    seen.add(current); // Add the current element to the set
   }
 
-  return false;
+  return false; // If no such pair is found, return false
 };
+
+// space complexity and time complexity are both O(n)

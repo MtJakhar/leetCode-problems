@@ -1,29 +1,53 @@
 // valid mountian array
 // Given an array of integers arr, return true if and only if it is a valid mountain array.
 
-// Recall that arr is a mountain array if and only if:
-
-// arr.length >= 3
-// There exists some i with 0 < i < arr.length - 1 such that:
-// arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
-// arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
-
 const validMountainArray = (arr) => {
-  let startOfValley = 0;
-
+  // create variable that will hold peak index
+  let peak = 0;
+  // create termination conditions
   if (arr.length < 3) return false;
   if (arr[1] < arr[0]) return false;
 
+  // Loop through array starting at index 1
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i - 1] === arr[i]) return false;
+    // if current index is equal to previous index return false
+    if (arr[i] === arr[i - 1]) return false;
+    // if precious index is greater than current index return
     if (arr[i - 1] > arr[i]) {
-      startOfValley = i - 1;
+      // set peak to the larger number
+      peak = i - 1;
+      // break out of loop
       break;
     }
   }
-
-  for (let i = startOfValley; i < arr.length - 1; i++) {
+  // now loop through remaining array starting at peak
+  for (let i = peak; i < arr.length; i++) {
+    // if current index is larger than next index return false
     if (arr[i] <= arr[i + 1]) return false;
   }
   return true;
 };
+
+const validMountainArray2 = (arr) => {
+  const n = arr.length;
+  let i = 0;
+
+  // Step 1: Check for a valid uphill climb
+  while (i < n - 1 && arr[i] < arr[i + 1]) {
+    i++;
+  }
+
+  // Step 2: Check for the peak of the mountain
+  if (i === 0 || i === n - 1) {
+    return false; // If the peak is at the start or end, it's not a valid mountain
+  }
+
+  // Step 3: Check for a valid downhill descent
+  while (i < n - 1 && arr[i] > arr[i + 1]) {
+    i++;
+  }
+
+  return i === n - 1; // Return true if we reach the end of the array
+};
+
+// both solutions are tc = o(n), sc= o(1)
