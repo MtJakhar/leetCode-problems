@@ -8,17 +8,19 @@ let arr2 = [18, 6, 6, 6, 1, -1];
 
 const replaceElements = (arr) => {
   // create variable with a value of -1
-  let rightMax = -1;
+  let max = -1;
   // loop through array from the end to the beginning
   for (let i = arr.length - 1; i >= 0; i--) {
-    // create variable which which compares rightmax with current index, choose the greater of the two
-    let newMax = Math.max(arr[i], rightMax);
-    // set current variable to rightMax
-    arr[i] = rightMax;
-    // let rightmax equal to the newmax
-    rightMax = newMax;
+    // create variable which which compares max with current index, choose the greater of the two
+    let newMax = Math.max(arr[i], max);
+    // set current variable to max
+    arr[i] = max;
+    // let max equal to the newmax
+    max = newMax;
   }
   return arr;
 };
+
+// time C of O(n), space complexity O(1)
 
 console.log(replaceElements(arr1));
