@@ -5,20 +5,26 @@
 const moveZeroes = (nums) => {
   //   create a pointer
   let pointer = 0;
+  // create a counter for zero
   let zeroCounter = 0;
-  //   create for loop which is i = 1
+  //   loop through array from 0 index
   for (let i = 0; i < nums.length; i++) {
+    // if current index not eqaul to zero
     if (nums[i] !== 0) {
+      // set pointer index to current index
       nums[pointer] = nums[i];
+      // increment pointer
       pointer++;
     } else if (nums[i] === 0) {
+      // otherwise if index is 0 increment counter
       zeroCounter++;
     }
   }
 
-  for (let j = nums.length - 1; j > nums.length - (zeroCounter + 1); j--) {
-    nums[j] = 0;
+  // loop thorugh array staring for last index until elements equal to zero count are replaced with zeros
+  for (let i = nums.length - 1; i > nums.length - (zeroCounter + 1); i--) {
+    nums[i] = 0;
   }
-
+  // return original array
   return nums;
 };
