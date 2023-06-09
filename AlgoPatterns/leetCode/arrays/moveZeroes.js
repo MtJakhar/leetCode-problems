@@ -28,3 +28,24 @@ const moveZeroes = (nums) => {
   // return original array
   return nums;
 };
+
+const moveZeroes2 = function (nums) {
+  // Initialize two pointers, one for the current element and one for the last non-zero element
+  let current = 0; // Current element pointer
+  let nonZeroIndex = 0; // Last non-zero element pointer
+
+  // Iterate through the array
+  while (current < nums.length) {
+    // If the current element is non-zero, swap it with the last non-zero element
+    if (nums[current] !== 0) {
+      // Swap current element with the last non-zero element
+      [nums[current], nums[nonZeroIndex]] = [nums[nonZeroIndex], nums[current]];
+
+      // Increment the last non-zero element pointer
+      nonZeroIndex++;
+    }
+
+    // Move to the next element
+    current++;
+  }
+};
