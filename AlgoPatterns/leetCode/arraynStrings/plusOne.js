@@ -21,6 +21,7 @@ const plusOneBeta = (digits) => {
   return newdigits;
 };
 
+// timeC = O(n), spaceC = O(1)
 const plusOne = (digits) => {
   // loop through the array starting from the rear
   for (let i = digits.length - 1; i >= 0; i--) {
