@@ -2,7 +2,9 @@ const spiralOrder = (matrix) => {
   // Handle empty matrix case
   if (matrix.length === 0) return [];
 
+  // create an empty array which will hold spiral order
   const result = [];
+  // create variables which keep track of the toprow, bottomrow, leftColumn, rightColumn
   let topRow = 0;
   let bottomRow = matrix.length - 1;
   let leftColumn = 0;
@@ -42,6 +44,6 @@ const spiralOrder = (matrix) => {
 
   return result;
 };
-//   Space Complexity: The space complexity of this solution is O(1) because the output array (result) is not counted in the space complexity analysis. We only use a constant amount of extra space for the variables used to track the boundaries and indices.
+//   Space Complexity: The space complexity of this solution is O(m+n) because the output array (result) is not counted in the space complexity analysis. We only use a constant amount of extra space for the variables used to track the boundaries and indices.
 
-// Time Complexity: The time complexity of this solution is O(m * n), where m is the number of rows and n is the number of columns in the matrix. We iterate through all the elements in the matrix exactly once, and the number of iterations is proportional to the total number of elements in the matrix. Therefore, the time complexity is linear in terms of the matrix size.
+// Time Complexity: The time complexity of this solution is O(m * n), where m is the number of rows and n is the number of columns in the matrix. We iterate through all the elements in the matrix exactly once, and the number of iterations is proportional to the total number of elements in the matrix, which is m * n. Therefore, the time complexity is quadratic in terms of the matrix size.
