@@ -26,3 +26,26 @@ function strStr(haystack, needle) {
 
   return -1; // Needle not found in haystack
 }
+//              k
+//                i                   j
+// haystack = "leetcode", needle = "leeto"
+const strStr = (haystack, needle) => {
+  if (needle === "") {
+    return 0;
+  }
+  if (haystack.length < needle.length) {
+    return -1;
+  }
+
+  for (let i = 0; i <= haystack.length - needle.length; i++) {
+    let j;
+    for (j = 0; j < needle.length; j++) {
+      if (haystack[i + j] !== needle[j]) {
+        break;
+      }
+    }
+    if (j === needle.length) return i;
+  }
+
+  return -1;
+};
